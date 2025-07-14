@@ -1,0 +1,30 @@
+# Example render.yaml for a Python (Django) app
+plan: starter
+
+services:
+  - type: web
+    name: my-app
+    env: python
+    plan: starter
+    region: oregon
+    branch: main
+    repo: https://github.com/yourusername/your-repo-name
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn myproject.wsgi:application"
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: myproject.settings
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: ALLOWED_HOSTS
+        value: your-app.onrender.com
+
+databases:
+  - name: my-db
+    plan: starter
+    region: oregon
+
+previews:
+  generation: manual
+  expireAfterDays: 7
