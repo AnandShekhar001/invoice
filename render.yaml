@@ -1,5 +1,38 @@
-# Example render.yaml for a Python (Django) app
-plan: starter
+# # Example render.yaml for a Python (Django) app
+# plan: starter
+
+# services:
+#   - type: web
+#     name: my-app
+#     env: python
+#     plan: starter
+#     region: oregon
+#     branch: main
+#     repo: https://github.com/AnandShekhar001/invoice
+#     buildCommand: "pip install -r requirements.txt"
+#     startCommand: "gunicorn INVOICE_GENERATOR.wsgi:application"
+#     autoDeploy: true
+#     envVars:
+#       - key: DJANGO_SETTINGS_MODULE
+#         value: myproject.settings
+#       - key: SECRET_KEY
+#         value: your-secret-key
+#       - key: ALLOWED_HOSTS
+#         value: your-app.onrender.com
+
+# databases:
+#   - name: my-db
+#     plan: starter
+#     region: oregon
+
+# previews:
+#   generation: manual
+#   expireAfterDays: 7
+
+# Corrected render.yaml for Django app on Render
+ 
+
+ plan: starter
 
 services:
   - type: web
@@ -10,20 +43,15 @@ services:
     branch: main
     repo: https://github.com/AnandShekhar001/invoice
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn myproject.wsgi:application"
+    startCommand: "gunicorn invoice.wsgi:application"
     autoDeploy: true
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: myproject.settings
+        value: invoice.settings
       - key: SECRET_KEY
         value: your-secret-key
       - key: ALLOWED_HOSTS
         value: your-app.onrender.com
-
-databases:
-  - name: my-db
-    plan: starter
-    region: oregon
 
 previews:
   generation: manual
