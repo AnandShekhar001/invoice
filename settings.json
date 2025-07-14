@@ -1,7 +1,0 @@
-{
-  "python.formatting.provider": "black", // or "autopep8", "yapf"
-  "editor.formatOnSave": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  }
-}
