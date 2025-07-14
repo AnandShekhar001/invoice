@@ -8,7 +8,7 @@ services:
     plan: starter
     region: oregon
     branch: main
-    repo: https://github.com/yourusername/your-repo-name
+    repo: https://github.com/AnandShekhar001/invoice
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn myproject.wsgi:application"
     autoDeploy: true
